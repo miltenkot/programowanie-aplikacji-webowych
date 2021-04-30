@@ -1,39 +1,79 @@
-const channel1: any[] = [];
-const clapAudio: HTMLAudioElement = document.querySelector('[data-sound="clap"]')
+let rideSound: HTMLAudioElement;
+let kickSound: HTMLAudioElement;
+let boomSound: HTMLAudioElement;
+let hihatSound: HTMLAudioElement;
+let openhat: HTMLAudioElement;
+let snareSound: HTMLAudioElement;
+let tomSound: HTMLAudioElement;
+let tinkSound: HTMLAudioElement;
+let clapSound: HTMLAudioElement;
 
-const playChannel1Btn: HTMLButtonElement = document.querySelector('#playChannel1');
+appStart();
 
-document.body.addEventListener('keypress', onKeyDown);
-playChannel1Btn.addEventListener('click', onPlayChannel1);
+var sound = {
+
+    'q': function () {
+        play(rideSound)
+    },
+    'w': function () {
+        play(kickSound)
+    },
+    'e': function () {
+        play(boomSound)
+    },
+    'r': function () {
+        play(hihatSound)
+    },
+    't': function () {
+        play(openhat)
+    },
+    'y': function () {
+        play(snareSound)
+    },
+    'u': function () {
+        play(tomSound)
+    },
+    'i': function () {
+        play(tinkSound)
+    },
+    'o': function () {
+        play(clapSound)
+    }
+};
+
+function play(audio: HTMLAudioElement): void {
+    audio.currentTime = 0
+    audio.play()
+}
+
+function appStart(): void {
+    document.body.addEventListener('keypress', onKeyDown);
+    getSounds();
+
+}
+
+function getSounds(): void {
+    rideSound = document.querySelector('[data-sound="ride"]');
+    kickSound = document.querySelector('[data-sound="kick"]');
+    boomSound = document.querySelector('[data-sound="boom"]');
+    hihatSound = document.querySelector('[data-sound="hihat"]');
+    openhat = document.querySelector('[data-sound="openhat"]');
+    snareSound = document.querySelector('[data-sound="snare"]');
+    tomSound = document.querySelector('[data-sound="tom"]');
+    tinkSound = document.querySelector('[data-sound="tink"]');
+    clapSound = document.querySelector('[data-sound="clap"]');
+    
+}
 
 function onKeyDown(ev: KeyboardEvent): void {
-
+    console.log(ev);
     const key = ev.key;
-    const time = ev.timeStamp;
+    const timeStamp = ev.timeStamp;
+    playSoundFor(key);
 
-    channel1.push({
-        key,
-        time
-    });
-
-    playSound(key);
-    console.log(channel1)
 }
 
-function playSound(key: string) {
-    
-    clapAudio.currentTime = 0;
-    clapAudio.play();
+function playSoundFor(key: string): void {
+    sound[key]();
 }
 
-function onPlayChannel1(): void {
-    playChanne1();
-}
-
-function playChanne1(): void {
-    let prevTime = 0;
-    channel1.forEach(sound => {
-        const timeout = sound.time - prevTime;
-        setTimeout(() => playSound(sound.key), timeout);
-    });
-}
