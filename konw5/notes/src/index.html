@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notes</title>
+    <title></title>
   </head>
   <body>
-    <button id="addNote">Add</button>
-    <div id="noteList"></div>
+    <div id="inputContainer">
+      <div id="input">
+        <div>
+          <p>Title:</p>
+          <input id="inputTitle" class="inputField" type="text" maxlength="16">
+        </div>
+        <div>
+          <p>Note:</p>
+          <textarea id="inputText" class="inputField" type="text"></textarea>
+        </div>
+      </div>
+      <button type="button" id="submitButton">ADD</button>
+    </div>
+
+    <div id="result">
+      <span>Pinned</span>
+      <hr>
+      <div id="pinnedNotes" class="noteContainer">
+      </div>
+      <span id="span">Notes</span>
+      <hr>
+      <div id="notes" class="noteContainer">
+        
+      </div>
+    </div>
+
+
     <script src="index.js"></script>
   </body>
 </html>
