@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "firebase": "^8.6.5",
+    "jest": "^27.0.5",
     "node-sass": "^4.14.1"
   }
 }
