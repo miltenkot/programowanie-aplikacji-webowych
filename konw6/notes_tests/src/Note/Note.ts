@@ -2,7 +2,7 @@ import app from '../App';
 
 export class Note{
 
-    save(noteId: number, noteTitle: string, noteText: string, noteBgColor: string, isNotePinned: boolean){
+    getNote(noteId: number, noteTitle: string, noteText: string, noteBgColor: string, isNotePinned: boolean){
         let note: NoteData = {
             id: noteId,
             title: noteTitle,

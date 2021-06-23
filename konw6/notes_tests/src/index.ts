@@ -17,7 +17,7 @@ notes.pinnedDiv = pinned;
 notes.notesDiv = notesDiv;
 
 submitButton.addEventListener('click', () => {
-    let newNote = note.save(app.counter, inputTitle.value,inputText.value, "#ccae62", false);
+    let newNote = note.getNote(app.counter, inputTitle.value,inputText.value, "#ccae62", false);
     note.map(newNote);
     notes.notesDiv.appendChild(notes.create(newNote));
     remoteStorage.addFire(newNote);
