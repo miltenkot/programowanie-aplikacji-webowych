@@ -130,7 +130,7 @@ export class Notes{
                     wrapper.parentNode.removeChild(wrapper);
                 });
     
-                for(let i = 0; i < 6; i++){
+                for(let i = 0; i < Object.keys(Colors).length / 2; i++){
     
                     let colorDiv: HTMLDivElement = document.createElement("div");
                     colorDiv.className = 'colorDiv';

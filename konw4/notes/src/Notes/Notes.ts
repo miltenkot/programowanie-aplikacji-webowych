@@ -71,11 +71,11 @@ export class Notes{
 
         noteDiv.appendChild(noteHeaderDiv);
         noteHeaderDiv.appendChild(noteDate);
+        noteHeaderDiv.appendChild(noteCloseButton);
         noteDiv.appendChild(noteInnerWrapper);
 
         noteInnerWrapper.appendChild(noteTitleDiv);
         noteTitleDiv.appendChild(title);
-        noteInnerWrapper.appendChild(noteCloseButton);
         noteInnerWrapper.appendChild(noteTextArea);
 
         noteDiv.appendChild(noteButtons);
@@ -117,7 +117,6 @@ export class Notes{
     noteChangeColorEvent(noteChangeColor: HTMLButtonElement, noteDiv: HTMLDivElement, note: NoteData){
 
         noteChangeColor.addEventListener('click', () => {
-            if(document.querySelector("#changeColorDiv") == null){
     
                 let wrapper: HTMLDivElement = document.createElement("div");
                 wrapper.id = "changeColorDiv" + app.counter;
@@ -125,20 +124,15 @@ export class Notes{
                 wrapper.tabIndex= 1;
                 noteDiv.appendChild(wrapper);
     
-                wrapper.focus();
-                wrapper.addEventListener('focusout',() => {
-                    wrapper.parentNode.removeChild(wrapper);
-                });
-    
-                for(let i = 0; i < 6; i++){
-    
+                for(let item = 0; item < Object.keys(Colors).length / 2; item++){
+                    console.log(item);
                     let colorDiv: HTMLDivElement = document.createElement("div");
                     colorDiv.className = 'colorDiv';
-                    colorDiv.id = Colors[i];
+                    colorDiv.id = Colors[item];
     
                     let colorCircle: HTMLDivElement = document.createElement("div");
                     colorCircle.className = "colorCircle"
-                    colorCircle.style.backgroundColor = Colors[i];
+                    colorCircle.style.backgroundColor = Colors[item];
     
                     colorCircle.addEventListener('click', () => {
                         noteDiv.style.backgroundColor = colorCircle.style.backgroundColor;
@@ -148,7 +142,7 @@ export class Notes{
                     wrapper.appendChild(colorDiv);
                 }
             }
-        });
+        );
     }
 }
 export default Notes;    
