@@ -1,26 +1,18 @@
 .note{
-    width: 15%;
     min-width: 200px;
-    height: 284px;
+    height: 250px;
+    width: 250px;
     flex-direction: column;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
     margin-left: 27px;
     margin-bottom: 20px;
     position: relative;
-    .noteDrag{
+    .noteHeader{
       height: 25px;
       width: 100%;
-      background-color: #ff793f;
       position: relative;
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid black;
       display:flex;
-      justify-content: center;
-      span{
-        font-size: 10px;
-      }
+      justify-content: left;
     }
   }
   

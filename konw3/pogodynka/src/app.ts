@@ -6,19 +6,18 @@ export class App {
     
     constructor() {
         this.provider = new ApiProvider();
-        // this.bindInputEvents();
     }
-//
-    bindInputEvents(cityName: String) {  
+     bindInputEvents(cityName: String) {  
      document.getElementById("button").addEventListener("click", () => this.provider.getCityInfo(`${cityName}`));
-     this.addNewElement(cityName);
+     const data = this.provider.getData();
+     this.addNewElement(data.name, data.weather[0].description, data.main.temp);
     }
 
-    addNewElement(text: String) {
+    addNewElement(cityName: String, description: String, temp: String) {
         var li = document.createElement("li");
-        var t = document.createTextNode(`${text}`); 
+        var t = document.createTextNode(`${cityName} :  ${description} : ${temp}F `); 
         li.appendChild(t);
-        if (text === '') {
+        if (cityName === '') {
             alert("You must write something!");
           } else {
             document.getElementById("myUL").appendChild(li);
@@ -29,8 +28,5 @@ export class App {
             span.className = "close";
         span.appendChild(txt);
         li.appendChild(span);
-
-
-        //this.bindInputEvents(inputValue);
     }
 }

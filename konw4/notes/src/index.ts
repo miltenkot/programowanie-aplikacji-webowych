@@ -2,7 +2,6 @@ import app from './App'
 import appStorage from './Storage/AppStorage';
 import Note from './Note/Note';
 import Notes from './Notes/Notes';
-import './Styles/reset.scss';
 import './Styles/main.scss';
 
 const note = new Note();

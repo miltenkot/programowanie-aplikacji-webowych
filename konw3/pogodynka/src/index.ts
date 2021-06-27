@@ -8,7 +8,7 @@ const app = new App()
 
 submitButton.addEventListener('click', () => {
     let text = inputText.value;
-    app.bindInputEvents(text);
+     app.bindInputEvents(text);
 });
 
 

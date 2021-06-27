@@ -18,9 +18,9 @@ export class Notes{
         noteInnerWrapper.id = "noteInnerWrapper" + app.counter;
         noteInnerWrapper.className = "noteInnerWrapper";
 
-        let noteDragDiv: HTMLDivElement = document.createElement("div");
-        noteDragDiv.id = "noteDrag" + app.counter;
-        noteDragDiv.className = "noteDrag";
+        let noteHeaderDiv: HTMLDivElement = document.createElement("div");
+        noteHeaderDiv.id = "noteHeader" + app.counter;
+        noteHeaderDiv.className = "noteHeader";
 
         let newDate = new Date()
         let noteDate: HTMLSpanElement = document.createElement("span");
@@ -69,8 +69,8 @@ export class Notes{
         noteChangeColor.innerText = "COLOR"
         this.noteChangeColorEvent(noteChangeColor, noteDiv, note);
 
-        noteDiv.appendChild(noteDragDiv);
-        noteDragDiv.appendChild(noteDate);
+        noteDiv.appendChild(noteHeaderDiv);
+        noteHeaderDiv.appendChild(noteDate);
         noteDiv.appendChild(noteInnerWrapper);
 
         noteInnerWrapper.appendChild(noteTitleDiv);
