@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset = "UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" contant="IE-edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Staty</title>
-</head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALCAPP</title>
+</head>
 <body>
-<div class="input-data">
-    <input type = "text" id = "data1">
-    <input type = "text" id = "data2">
-    <input type = "text" id = "data3">
-    <input type = "text" id = "data4">
-</div>
+    <div id="inputs-container">
+        <input type="text" id="data1"/>
+        <input type="text" id="data2"/>
+        <input type="text" id="data3"/>
+        <input type="text" id="data4"/>
+    </div>
+    <div class="inputs-results-container">
+        <label for="sum">Sum = </label>
+        <input type="text" disabled id="sum"/>
+        <br/>
 
-<div class="status-data">
-    <input type = "text" id = "sum">
-    <input type = "text" id = "avg">
-    <input type = "text" id = "min">
-    <input type = "text" id = "max">
-</div>
+        <label for="sum">Avg = </label>
+        <input type="text" disabled id="avg"/>
+        <br/>
 
-<script src="webApp.js"></script>
-</body>       
+        <label for="sum">Min = </label>
+        <input type="text" disabled id="min"/>
+        <br/>
 
-</html>   
+        <label for="sum">Max = </label>
+        <input type="text" disabled id="max"/>
+    </div>
+</body>
+<script src="tsc/index.js"></script>
+</html>

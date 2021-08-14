@@ -1,6 +1,3 @@
-import { StatsApp } from './webApp';
-import './main.scss';
+import { StatsApp } from './StatsApp';
 
 const app = new StatsApp()
-
-
