@@ -5,17 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrumKit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <audio src="sounds/ride.wav" controls data-sound="ride"></audio>
-    <audio src="sounds/kick.wav" controls data-sound="kick"></audio>
-    <audio src="sounds/boom.wav" controls data-sound="boom"></audio>
-    <audio src="sounds/hihat.wav" controls data-sound="hihat"></audio>
-    <audio src="sounds/openhat.wav" controls data-sound="openhat"></audio>
-    <audio src="sounds/snare.wav" controls data-sound="snare"></audio>
-    <audio src="sounds/tom.wav" controls data-sound="tom"></audio>
-    <audio src="sounds/tink.wav" controls data-sound="tink"></audio>
-    <audio src="sounds/clap.wav" controls data-sound="clap"></audio>
+    <div id="sounds-control">
+    <audio src="sounds/ride.wav" data-sound="ride"></audio>
+    <audio src="sounds/kick.wav" data-sound="kick"></audio>
+    <audio src="sounds/boom.wav" data-sound="boom"></audio>
+    <audio src="sounds/hihat.wav" data-sound="hihat"></audio>
+    <audio src="sounds/openhat.wav" data-sound="openhat"></audio>
+    <audio src="sounds/snare.wav" data-sound="snare"></audio>
+    <audio src="sounds/tom.wav" data-sound="tom"></audio>
+    <audio src="sounds/tink.wav" data-sound="tink"></audio>
+    <audio src="sounds/clap.wav" data-sound="clap"></audio>
+
+    <div id="soundbar_top">
+        <button id = "q" class="sobundBbutton"> Q </button>
+        <button id = "w" class="sobundBbutton"> W </button>
+        <button id = "e" class="sobundBbutton"> E </button>
+        <button id = "r" class="sobundBbutton"> R </button>
+    </div>
+
+    <div id="soundbar_bottom">
+        <button id = "a" class="sobundBbutton"> A </button>
+        <button id = "s" class="sobundBbutton"> S </button>
+        <button id = "d" class="sobundBbutton"> D </button>
+        <button id = "f" class="sobundBbutton"> F </button>
+    </div>
+</div> 
+    <div id="player">  
+        <div id="track1" class="trackDiv">
+            <input type="checkbox" id="track1Checkbox" class="playerCheckBox">
+            <button id = "track1Record" class="playerButtonRecord"> Track 1 </button>
+            <button id = "track1Play" class="playerButtonStart"> play </button>
+        </div>
+        <div id="track2" class="trackDiv">
+            <input type="checkbox" id="track2Checkbox" class="playerCheckBox">
+            <button id = "track2Record" class="playerButtonRecord"> Track 2 </button>
+            <button id = "track2Play" class="playerButtonStart"> play </button>
+        </div>
+        <div id="track3" class="trackDiv">
+            <input type="checkbox" id="track3Checkbox" class="playerCheckBox">
+            <button id = "track3Record" class="playerButtonRecord"> Track 3 </button>
+            <button id = "track3Play" class="playerButtonStart"> play </button>
+        </div>
+
+        <div id="track4" class="trackDiv">
+            <input type="checkbox" id="track4Checkbox" class="playerCheckBox">
+            <button id = "track4Record" class="playerButtonRecord"> Track 4 </button>
+            <button id = "track4Play" class="playerButtonStart"> play </button>
+        </div>
+        <p></p>
+        <div id="PlaySelected" class="trackDiv">
+            <button id = "PlaySelectedButton"> play </button>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </div>
 </body>
